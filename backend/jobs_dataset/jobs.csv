@@ -1,0 +1,6 @@
+job_id,job_title,company,skills_required,job_description
+1,React Developer,ABC Tech,"React, JavaScript, REST API","Looking for a React developer with strong knowledge in JavaScript and REST APIs. Experience in frontend development required."
+2,Python Backend Developer,XYZ Solutions,"Python, FastAPI, SQL","We need a backend developer skilled in Python, FastAPI, and database management using SQL."
+3,Data Analyst,DataCorp,"Python, SQL, Excel","Seeking a data analyst proficient in Python, SQL queries, and Excel for data analysis tasks."
+4,Full Stack Developer,Innovatech,"React, Node.js, MongoDB","Hiring a full stack developer experienced in React, Node.js, and MongoDB database systems."
+5,Machine Learning Engineer,AI Labs,"Python, Machine Learning, Scikit-learn","Looking for an ML engineer with experience in Python, scikit-learn, and building predictive models."
