@@ -1,23 +1,10 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from app.utils.text_preprocessing import clean_text
 
+from sklearn.feature_extraction.text import TfidfVectorizer
+
 def vectorize_text(resume_text, job_descriptions):
-    """
-    Convert resume and job descriptions into TF-IDF vectors
-    """
-
-    # Clean resume
-    cleaned_resume = clean_text(resume_text)
-
-    # Clean job descriptions
-    cleaned_jobs = [clean_text(job) for job in job_descriptions]
-
-    # Combine resume + jobs for vectorization
-    all_documents = [cleaned_resume] + cleaned_jobs
-
-    # Create TF-IDF vectorizer
+    corpus = [resume_text] + job_descriptions
     vectorizer = TfidfVectorizer()
-
-    tfidf_matrix = vectorizer.fit_transform(all_documents)
-
+    tfidf_matrix = vectorizer.fit_transform(corpus)
     return tfidf_matrix
