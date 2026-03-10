@@ -28,7 +28,10 @@ async def match_resume_file(file: UploadFile = File(...)):
             f.write(await file.read())
 
         # Extract text from PDF
-        resume_text = extract_text_from_pdf(temp_path)
+        resume_data = extract_text_from_pdf(temp_path)
+
+        resume_text = resume_data["resume_text"]
+        resume_skills = resume_data["resume_skills"]
 
         if not resume_text.strip():
             return {"error": "No text could be extracted from the PDF."}
@@ -60,7 +63,7 @@ async def match_resume_file(file: UploadFile = File(...)):
 
         results = []
         for job in jobs:
-            job_skills = [s.strip() for s in job.get("skills_required", "").split(",") if s.strip()]
+            job_skills = job.get("skills_required", [])
             matched_skills = []
             missing_skills = []
         
