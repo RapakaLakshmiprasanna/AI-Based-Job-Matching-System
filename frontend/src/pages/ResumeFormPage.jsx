@@ -65,7 +65,7 @@ const ResumeFormPage = () => {
             <h3>{job.job_title}</h3>
             <p><strong>Company:</strong> {job.company}</p>
             <p><strong>Location:</strong> {job.location.display_name || job.location}</p>
-            <p><strong>Match Score:</strong> {(job.similarity_score).toFixed(0)}%</p>
+            <p><strong>Match Score:</strong> {(job.score ?? 0).toFixed(0)}%</p>
             <p><strong>Matched Skills:</strong> {job.matched_skills.length > 0 ? job.matched_skills.join(", ") : "None"}</p>
             <p><strong>Missing Skills:</strong> {job.missing_skills.length > 0 ? job.missing_skills.join(", ") : "None"}</p>
             <a href={job.redirect_url} target="_blank" rel="noopener noreferrer">View Job</a>
